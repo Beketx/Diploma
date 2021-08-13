@@ -8,14 +8,27 @@ public class TestSpring {
             "applicationContext.xml"
         );
 
+        QPOP classicalMusic = context.getBean("musicBean", QPOP.class);
+//      because of private constructor  QPOP c = new QPOP();
+        System.out.println(classicalMusic.getSong());
 //        Music music = context.getBean("musicBean", Music.class);
 //
 //        MusicPlayer musicPlayer = new MusicPlayer(music);
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//        MusicPlayer firstmusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//
+//        boolean comparison = firstmusicPlayer == secondMusicPlayer;
+//
+//        firstmusicPlayer.setVolume(10);
+//
+//        System.out.println(comparison);
+//
+//        System.out.println(firstmusicPlayer.getVolume());
+//        System.out.println(secondMusicPlayer.getVolume());
 
-        musicPlayer.playMusic();
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
+//
+//        System.out.println(musicPlayer.getName());
+//        System.out.println(musicPlayer.getVolume());
         context.close();
     }
 }
